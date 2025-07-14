@@ -2,9 +2,11 @@
 
 ## Prerequisites
 
-Install arduino-cli
-Refer: https://arduino.github.io/arduino-cli/1.2/
-
+- Install arduino-cli
+  - Refer: https://arduino.github.io/arduino-cli/1.2/
+  - Add arduino-cli to the system path
+- Ensure Ollama is setup on your machine
+  - Refer: https://ollama.com/download
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
