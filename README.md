@@ -28,6 +28,21 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
      -H "Content-Type: application/json" \
      -d '{"prompt": "Write Arduino code to blink LED on pin 2 using ESP32."}'
 
+## Following things are missing 
+
+- ❌ The context is not versioned or registered as a resource.
+
+- ❌ You don’t have context chaining or plugins that add/modify context dynamically.
+
+- ❌ There’s no standardized schema for system-level metadata.
+
+- ❌ There’s no separation between prompt orchestration and execution logic.
+
+- ❌ No context persistence or audit trail for context reuse.
+
+- ❌ There’s no explicit tool calling, function calling, or modular roles beyond basic system + user.
+
+
 
 ## Prerequisites
 
