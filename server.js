@@ -5,6 +5,8 @@ const fs = require('fs');
 const { exec } = require('child_process');
 const path = require('path');
 
+const MCP = require('./contextManager');
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -28,6 +30,36 @@ const DEFAULT_BOARD = 'arduino:avr:uno';
 
 // Serve a test UI
 app.use(express.static(path.join(__dirname, 'public')));
+
+// List all contexts
+app.get('/contexts', (req, res) => {
+  const contexts = MCP.getAllContexts();
+  res.send({ contexts });
+});
+
+// Create a new context
+app.post('/contexts', (req, res) => {
+  const { name, system_prompt } = req.body;
+  if (!name || !system_prompt) {
+    return res.status(400).send({ error: 'name and system_prompt are required' });
+  }
+  try {
+    const id = MCP.createContext(name, system_prompt);
+    res.send({ id, message: 'Context created successfully.' });
+  } catch (err) {
+    res.status(500).send({ error: err.toString() });
+  }
+});
+
+// Get context by ID
+app.get('/contexts/:id', (req, res) => {
+  const ctx = MCP.getContextById(req.params.id);
+  if (!ctx) {
+    return res.status(404).send({ error: 'Context not found.' });
+  }
+  res.send({ context: ctx });
+});
+
 
 // API endpoint to generate Arduino code
 app.post('/generate-arduino', async (req, res) => {
