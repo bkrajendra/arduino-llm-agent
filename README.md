@@ -85,3 +85,51 @@ curl --location 'http://localhost:3000/generate-arduino' \
 }'
 
 ```
+
+---
+
+## 🗺️ Roadmap & Future Improvements
+
+This project is a strong starting point for combining LLMs with embedded automation. Here are planned ideas to take it further:
+
+- [ ] **Web UI Enhancements**
+  - Add a proper web frontend with code syntax highlighting (e.g., Ace Editor or Monaco).
+  - Display generated code nicely with download or copy buttons.
+  - Show compilation logs and upload status in real-time.
+
+- [ ] **Board Management**
+  - Add a dropdown in the UI to select supported boards manually.
+  - Fetch board list dynamically from a config file (`boards.json`).
+  - Auto-detect connected boards and available serial ports.
+
+- [ ] **User Prompts & Templates**
+  - Offer ready-made prompt templates for common tasks (blink LED, read sensor, etc.).
+  - Add prompt history and re-run support.
+
+- [ ] **Project Files**
+  - Allow multiple sketches and auto-archive generated code.
+  - Provide an option to download the `.ino` as a zip.
+
+- [ ] **Security & Permissions**
+  - Add basic API authentication or API keys.
+  - Validate generated code before compile/upload for safety.
+
+- [ ] **Docker & Deployment**
+  - Add a Dockerfile to package Ollama, Arduino CLI, and the server together.
+  - Provide instructions for deployment on local networks or edge devices.
+
+- [ ] **CI/CD Integration**
+  - Use GitHub Actions to lint, test, and deploy the backend.
+  - Add unit tests for code block & board parsing.
+
+- [ ] **Extensibility**
+  - Support other microcontroller families (RP2040, STM32, etc.).
+  - Modular plugin system for new boards or new codegen models.
+
+- [ ] **Monitoring**
+  - Add basic logging & metrics for LLM usage, compile stats, success/failure rates.
+
+---
+
+**Want to contribute?**  
+Feel free to open an Issue or PR for any of these improvements! 🚀
