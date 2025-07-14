@@ -28,20 +28,27 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
      -H "Content-Type: application/json" \
      -d '{"prompt": "Write Arduino code to blink LED on pin 2 using ESP32."}'
 
-## Following things are missing 
+---
 
-- ❌ The context is not versioned or registered as a resource.
+## 🧩 MCP (Model Context Protocol) Status
 
-- ❌ Don’t have context chaining or plugins that add/modify context dynamically.
+This project partially follows MCP (Model Context Protocol) principles:
+- Uses structured system + user roles.
+- Passes prompt context in a clear format.
+- Automates an external tool (Arduino CLI) based on generated context.
 
-- ❌ There’s no standardized schema for system-level metadata.
+### Planned Improvements for MCP Compliance
 
-- ❌ There’s no separation between prompt orchestration and execution logic.
+- [ ] Add a versioned **Context Registry** for reusable system instructions.
+- [ ] Support custom context creation and switching via REST.
+- [ ] Standardize request/response payloads to fully align with OpenAI’s Chat API format.
+- [ ] Add tool/plugin calls as structured operations.
+- [ ] Store complete chain-of-thought and compile/upload logs.
+- [ ] Add role-based API auth for context control.
 
-- ❌ No context persistence or audit trail for context reuse.
+---
 
-- ❌ There’s no explicit tool calling, function calling, or modular roles beyond basic system + user.
-
+The goal is to evolve this project into a reusable, standards-friendly MCP backend for embedded LLM workflows.
 
 
 ## Prerequisites
