@@ -1,5 +1,10 @@
 {
-  "name": "server",
+  "name": "llm-arduino-mcp",
+  "version": "0.1.0",
+  "description": "LLM-powered Arduino Machine Code Pipeline: Prompt → Code → Compile → Upload.",
+  "main": "server.js",
+  "author": "Rajendra",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "start": "bun run server.js"

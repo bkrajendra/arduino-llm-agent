@@ -9,10 +9,12 @@
 Generate, compile, and upload Arduino sketches automatically using natural language prompts and local Ollama LLM models.
 
 ## Features
-- Multiple board support (Arduino Uno, ESP8266, ESP32)
-- Local LLM for private codegen (no OpenAI cloud keys needed)
-- Automated compile & upload using Arduino CLI
-- Flexible backend API for integration with web UI
+
+- 🔌 Ollama local LLM API for private codegen
+- ⚙️ Automated compile & upload using Arduino CLI
+- 🧩 Supports multiple boards: Arduino Uno, ESP8266, ESP32 — extend easily
+- 📡 Simple Express API — plug into your own frontend
+
 
 ## Quick Start
 1. Install and run Ollama (`ollama serve`)
@@ -30,6 +32,14 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 
 - Install arduino-cli
   - Refer: https://arduino.github.io/arduino-cli/1.2/
+
+```bash
+arduino-cli core update-index
+arduino-cli core install arduino:avr
+arduino-cli core install esp8266:esp8266
+arduino-cli core install esp32:esp32
+```
+
   - Add arduino-cli to the system path
 - Ensure Ollama is setup on your machine
   - Refer: https://ollama.com/download
