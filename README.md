@@ -56,6 +56,13 @@ The goal is to evolve this project into a reusable, standards-friendly MCP backe
 - Install arduino-cli
   - Refer: https://arduino.github.io/arduino-cli/1.2/
 
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+```
+Or download a copy of the Arduino CLI, place it in a directory of your choice, and make sure to add it to your system’s PATH according to your operating system.
+
+
 ```bash
 arduino-cli core update-index
 arduino-cli core install arduino:avr
@@ -67,10 +74,6 @@ arduino-cli core install esp32:esp32
 - Ensure Ollama is setup on your machine
   - Refer: https://ollama.com/download
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-```
-Or download a copy of the Arduino CLI, place it in a directory of your choice, and make sure to add it to your system’s PATH according to your operating system.
 
 ## To install dependencies:
 
