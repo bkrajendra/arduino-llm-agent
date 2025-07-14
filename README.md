@@ -5,7 +5,7 @@
 
 ![Usage - UI test](assets/usage1.png "Usage - UI test")
 
-**LLM + Arduino Machine Code Pipeline**
+**LLM + MCP inspired flow**
 
 Generate, compile, and upload Arduino sketches automatically using natural language prompts and local Ollama LLM models.
 
