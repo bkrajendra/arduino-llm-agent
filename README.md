@@ -16,6 +16,7 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 
 ## Quick Start
 1. Install and run Ollama (`ollama serve`)
+   - ```ollama run llama3.2```
 2. Install and configure `arduino-cli`
 3. Clone this repo and `npm run start` (or `bun run` version)
 4. Send POST request with your prompt:
