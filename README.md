@@ -1,4 +1,4 @@
-# Arduino Ollama Agent server
+# Arduino LLM Agent
 
 ## Prerequisites
 
