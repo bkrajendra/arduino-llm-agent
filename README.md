@@ -32,7 +32,7 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 
 - ❌ The context is not versioned or registered as a resource.
 
-- ❌ You don’t have context chaining or plugins that add/modify context dynamically.
+- ❌ Don’t have context chaining or plugins that add/modify context dynamically.
 
 - ❌ There’s no standardized schema for system-level metadata.
 
