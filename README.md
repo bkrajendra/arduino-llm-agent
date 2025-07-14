@@ -3,6 +3,7 @@
 
 > An intelligent backend server that uses Large Language Models (LLMs) to generate, compile, and upload Arduino, ESP8266, and ESP32 firmware automatically — powered by Ollama and Arduino CLI.
 
+![Usage - UI test](assets/usage1.png "Usage - UI test")
 
 **LLM + Arduino Machine Code Pipeline**
 

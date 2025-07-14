@@ -26,6 +26,8 @@ const DEFAULT_BOARD = 'arduino:avr:uno';
 // const ARDUINO_BOARD = 'arduino:avr:uno';   // Change if needed
 // const ARDUINO_BOARD = "esp8266:esp8266:nodemcuv2"; 
 
+// Serve a test UI
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API endpoint to generate Arduino code
 app.post('/generate-arduino', async (req, res) => {
@@ -93,7 +95,7 @@ app.post('/generate-arduino', async (req, res) => {
   }
 });
 
-app.get('/', (req, res) => {
+app.get('/info', (req, res) => {
   runCommand('arduino-cli version');
   res.send('Arduino LLM Backend is running. Use POST /generate-arduino to generate code.');
 });
