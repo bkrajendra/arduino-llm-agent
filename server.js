@@ -15,18 +15,28 @@ const OLLAMA_URL = 'http://localhost:11434/api/chat'; // Change if your Ollama s
 const SERIAL_PORT = 'COM5';        // Change as per your board
 const OLLAMA_MODEL = 'llama3.2:latest'; // Change as per your Ollama setup
 
-const SYSTEM_PROMPT = `
+// const SYSTEM_PROMPT = `...`;
+const DEFAULT_SYSTEM_PROMPT = `
 You are an expert Arduino programmer.
-Generate only valid Arduino code inside **one** markdown code block.
-Also, at the end of your response, print the board FQBN on a separate line starting with "BOARD:".
-Examples: BOARD: esp8266:esp8266:nodemcuv2, BOARD: esp32:esp32:esp32dev, BOARD: arduino:avr:uno.
-If the user did not specify a board, use "BOARD: arduino:avr:uno".
-Do not add any other text or explanation.
+Generate only valid Arduino code inside a single markdown code block.
+Use standard Arduino libraries.
+Do not include any explanations.
 `;
+
+// const SYSTEM_PROMPT = `
+// You are an expert Arduino programmer.
+// Generate only valid Arduino code inside **one** markdown code block.
+// Also, at the end of your response, print the board FQBN on a separate line starting with "BOARD:".
+// Examples: BOARD: esp8266:esp8266:nodemcuv2, BOARD: esp32:esp32:esp32dev, BOARD: arduino:avr:uno.
+// If the user did not specify a board, use "BOARD: arduino:avr:uno".
+// Do not add any other text or explanation.
+// `;
 
 const DEFAULT_BOARD = 'arduino:avr:uno';
 // const ARDUINO_BOARD = 'arduino:avr:uno';   // Change if needed
 // const ARDUINO_BOARD = "esp8266:esp8266:nodemcuv2"; 
+
+
 
 // Serve a test UI
 app.use(express.static(path.join(__dirname, 'public')));
@@ -65,7 +75,20 @@ app.get('/contexts/:id', (req, res) => {
 app.post('/generate-arduino', async (req, res) => {
   try {
     console.log('[Stage 1] Received request to /generate');
+
     const userPrompt = req.body.prompt;
+    const contextId = req.body.context_id; // optional
+
+    let SYSTEM_PROMPT = DEFAULT_SYSTEM_PROMPT;
+
+    if (contextId) {
+      const ctx = MCP.getContextById(contextId);
+      if (!ctx) {
+        return res.status(400).send({ error: `Context ID ${contextId} not found.` });
+      }
+      SYSTEM_PROMPT = ctx.system_prompt;
+    }
+    
     if (!userPrompt) {
       console.warn('[Stage 1] Missing prompt in request body');
       return res.status(400).send({ error: 'Missing prompt' });
