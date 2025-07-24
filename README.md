@@ -11,10 +11,10 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 
 ## Features
 
-- 🔌 Ollama local LLM API for private codegen
-- ⚙️ Automated compile & upload using Arduino CLI
-- 🧩 Supports multiple boards: Arduino Uno, ESP8266, ESP32 — extend easily
-- 📡 Simple Express API — plug into your own frontend
+- Ollama local LLM API for private codegen
+- ⚙Automated compile & upload using Arduino CLI
+- Supports multiple boards: Arduino Uno, ESP8266, ESP32 — extend easily
+- Simple Express API — plug into your own frontend
 
 
 ## Quick Start
@@ -30,7 +30,7 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 
 ---
 
-## 🧩 MCP (Model Context Protocol) Status
+## MCP (Model Context Protocol) Status
 
 This project partially follows MCP (Model Context Protocol) principles:
 - Uses structured system + user roles.
@@ -110,7 +110,7 @@ curl --location 'http://localhost:3000/generate-arduino' \
 
 ---
 
-## 🗺️ Roadmap & Future Improvements
+## Roadmap & Future Improvements
 
 This project is a strong starting point for combining LLMs with embedded automation. Here are planned ideas to take it further:
 
@@ -154,4 +154,4 @@ This project is a strong starting point for combining LLMs with embedded automat
 ---
 
 **Want to contribute?**  
-Feel free to open an Issue or PR for any of these improvements! 🚀
+Feel free to open an Issue or PR for any of these improvements!
