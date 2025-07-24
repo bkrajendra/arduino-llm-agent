@@ -12,7 +12,7 @@ Generate, compile, and upload Arduino sketches automatically using natural langu
 ## Features
 
 - Ollama local LLM API for private codegen
-- ⚙Automated compile & upload using Arduino CLI
+- Automated compile & upload using Arduino CLI
 - Supports multiple boards: Arduino Uno, ESP8266, ESP32 — extend easily
 - Simple Express API — plug into your own frontend
 
